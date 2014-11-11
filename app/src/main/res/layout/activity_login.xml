@@ -10,7 +10,7 @@
     tools:context=".Login">
 
     <TextView
-        android:text="Log In"
+        android:text="Calorie Snap!"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -64,7 +64,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="Log In"
         android:id="@+id/buttonSubmit"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/password"
