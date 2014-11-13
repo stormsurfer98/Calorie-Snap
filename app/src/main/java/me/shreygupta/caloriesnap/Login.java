@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -19,40 +21,58 @@ public class Login extends Activity {
     private Button button02;
     private EditText editText01;
     private EditText editText02;
+    private EditText editText03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Parse.initialize(this, "0gAkNOUna8vIraB2SRjL5sxHbsvsRcNgBK8rENyv", "8fETUTRfgcmw47IxYQBcOMzU3WaKDe3yZn2UvcUx");
-        button01 = (Button)findViewById(R.id.buttonSubmit);
-        button02 = (Button)findViewById(R.id.buttonSignup);
+        button01 = (Button)findViewById(R.id.buttonSignup);
+        button02 = (Button)findViewById(R.id.buttonSubmit);
         editText01 = (EditText)findViewById(R.id.usernameText);
         editText02 = (EditText)findViewById(R.id.passwordText);
+        editText03 = (EditText)findViewById(R.id.emailText);
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ParseUser user = new ParseUser();
                 user.setUsername(editText01.getText().toString());
                 user.setPassword(editText02.getText().toString());
+                user.setEmail(editText03.getText().toString());
 
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(com.parse.ParseException e) {
                         if (e == null) {
-                            //Do something
+                            editText01.setText("");
+                            editText02.setText("");
+                            editText03.setText("");
                         } else {
                             //Do something
                         }
                     }
                 });
-                
-                editText01.setText("");
-                editText02.setText("");
             }
         });
         button02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ParseUser user = new ParseUser();
+                user.setUsername(editText01.getText().toString());
+                user.setPassword(editText02.getText().toString());
+                user.setEmail(editText03.getText().toString());
+
+                ParseUser.logInInBackground(editText01.getText().toString(), editText02.getText().toString(), new LogInCallback() {
+                    public void done(ParseUser user, com.parse.ParseException e) {
+                        if (e == null) {
+                            editText01.setText("");
+                            editText02.setText("");
+                            editText03.setText("");
+                        } else {
+                            //Do something
+                        }
+                    }
+                });
             }
         });
     }
