@@ -7,14 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import com.parse.LogInCallback;
 import com.parse.Parse;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
-import java.text.ParseException;
 
 public class Login extends Activity {
     private Button button01;
