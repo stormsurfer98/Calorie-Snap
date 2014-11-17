@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseUser;
@@ -18,6 +19,7 @@ public class Login extends Activity {
     private EditText editText01;
     private EditText editText02;
     private EditText editText03;
+    private TextView textView01;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class Login extends Activity {
         editText01 = (EditText)findViewById(R.id.usernameText);
         editText02 = (EditText)findViewById(R.id.passwordText);
         editText03 = (EditText)findViewById(R.id.emailText);
+        textView01 = (TextView)findViewById(R.id.consoleText);
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,8 +46,9 @@ public class Login extends Activity {
                             editText01.setText("");
                             editText02.setText("");
                             editText03.setText("");
+                            textView01.setText("New user successfully created!");
                         } else {
-                            //Do something
+                            textView01.setText("User creation failed! ERROR: " + e);
                         }
                     }
                 });
@@ -64,15 +68,15 @@ public class Login extends Activity {
                             editText01.setText("");
                             editText02.setText("");
                             editText03.setText("");
+                            textView01.setText("User logged in successfully!");
                         } else {
-                            //Do something
+                            textView01.setText("User login failed! ERROR: " + e);
                         }
                     }
                 });
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
