@@ -17,7 +17,9 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content">
+
+            </TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -25,20 +27,40 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
-                    android:id="@+id/Sign Up"
+                    android:id="@+id/signup"
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="SIGN UP"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/Log In"
+                    android:id="@+id/login"
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="LOG IN"/>
 
                 </LinearLayout>
 
@@ -48,6 +70,16 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="ABOUT"/>
 
                 </LinearLayout>
             </FrameLayout>
