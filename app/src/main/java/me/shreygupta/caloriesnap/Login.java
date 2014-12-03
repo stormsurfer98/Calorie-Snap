@@ -1,6 +1,7 @@
 package me.shreygupta.caloriesnap;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,12 +27,21 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Parse.initialize(this, "0gAkNOUna8vIraB2SRjL5sxHbsvsRcNgBK8rENyv", "8fETUTRfgcmw47IxYQBcOMzU3WaKDe3yZn2UvcUx");
+        Typeface sans = Typeface.createFromAsset(getAssets(), "fonts/josefin_sans/JosefinSans-Regular.ttf");
+        Typeface raleway = Typeface.createFromAsset(getAssets(), "fonts/raleway/Raleway-Regular.ttf");
+        Typeface roboto = Typeface.createFromAsset(getAssets(), "fonts/josefin_sans/RobotoCondensed-Light.ttf");
         button01 = (Button)findViewById(R.id.buttonSignup);
         button02 = (Button)findViewById(R.id.buttonSubmit);
         editText01 = (EditText)findViewById(R.id.usernameText);
         editText02 = (EditText)findViewById(R.id.passwordText);
         editText03 = (EditText)findViewById(R.id.emailText);
         textView01 = (TextView)findViewById(R.id.consoleText);
+        button01.setTypeface(sans);
+        button02.setTypeface(sans);
+        editText01.setTypeface(sans);
+        editText02.setTypeface(sans);
+        editText03.setTypeface(sans);
+        textView01.setTypeface(sans);
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
