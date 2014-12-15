@@ -81,6 +81,8 @@ public class Login extends Activity {
                             textView01.setText("User logged in successfully!");
                         } else {
                             textView01.setText("User login failed! ERROR: " + e);
+                            textView01.setText("Please enter your password." + e);
+
                         }
                     }
                 });
